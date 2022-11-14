@@ -1,0 +1,73 @@
+<style>h1 {
+ background: #8888ff;
+border-bottom: 5px solid #7766aa;
+}
+p
+{ background: #000000;
+border-bottom: 1px  #7766aa;
+ }
+
+</style>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class = "navbar-nav">
+
+    <li class = "nav-item">
+
+      <div  *ngIf="signusgg._value=== true ">
+      <a routerLink="lireUsagersr" routerLinkActive="active" class="nav-link" href=‘_blank’ disabled>Liste d'usagers</a>
+      </div>
+    </li>
+    <li class = "nav-item">
+      <div  *ngIf="signusgg._value=== true ">
+      <a routerLink="lireCitoyensr" routerLinkActive="active" class="nav-link" href=‘_blank’>Liste de citoyens</a>
+      </div>
+    </li><li class = "nav-item">
+    <a routerLink="lirePlaintesr" routerLinkActive="active" class="nav-link" href=‘_blank’>Liste de plaintes</a>
+  </li>
+    <li class = "nav-item">
+      <div  *ngIf="signusgg._value=== true ">
+      <a routerLink="createUsagerr" routerLinkActive="active" class="nav-link" href=‘_blank’>Add d'usager</a>
+      </div>
+    </li>
+    <li class = "nav-item">
+      <div  *ngIf="signusgg._value=== true ">
+      <a routerLink="createCitoyenr" routerLinkActive="active" class="nav-link" href=‘_blank’>Add de citoyen</a>
+      </div>
+    </li>
+    <li class = "nav-item">
+      <div  *ngIf="signusgg._value=== true ">
+      <a routerLink="createPlainter" routerLinkActive="active" class="nav-link" href=‘_blank’>Add de plainte</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<h1 class="text-center">{{title}}</h1><br><table class="table-dark table-bordered"><tr><td class="align-bottom"><p class="text-white bg-dark">Si vous êtes un citoyen qui a eu une plainte >>></p></td>
+<td class="align-middle">
+  <div  *ngIf="signcitt._value=== false ">
+<button type="button" class="btn btn-secondary btn-lg"  (click)="signC();" > Sign in Citoyen</button>
+  </div>
+  <div  *ngIf="signcitt._value=== true ">
+    <button type="button" class="btn btn-secondary btn-lg"  (click)="signOC();" > Sign out Citoyen</button></div> </td>
+
+  <tr><td class="align-middle"><p class="text-white bg-dark">Pour les Usagers >>></p></td><td class="align-middle">
+  <div  *ngIf="signusgg._value=== false ">
+  <button type="button" class="btn btn-secondary btn-lg"  (click)="signU();" > Sign in Usager</button>
+  </div>
+  <div  *ngIf="signusgg._value=== true ">
+    <button type="button" class="btn btn-secondary btn-lg"  (click)="signOU();" > Sign out Usager</button>
+  </div>
+</td></tr></table>
+<br><br>
+
+
+<div class = "container">
+  <router-outlet></router-outlet>
+
+</div>
+<footer class = "footer">
+  <div class = "container">
+    <span>Tous droits réservés 2022</span>
+  </div>
+</footer>

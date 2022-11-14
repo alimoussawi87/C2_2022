@@ -1,0 +1,40 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+h3 { background: #dddd00;
+border-bottom: 5px solid #33aaff;
+
+}
+
+
+
+div {
+  border-bottom: double;
+}
+</style>
+<h3 class="text-center">List d'usagers de l'application</h3>
+<div class="container">
+  <table class = "table table-striped">
+
+    <thead>
+    <tr>
+      <th>Section administrative</th>
+      <th> usager </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let usager of usagers">
+      <td> {{ usager.section }} </td>
+      <td> {{ usager.usagernom }} </td>
+      <td>
+        <button (click) = "updateUsager(usager.id)" class = "btn btn-info"> Mis à jour {{ usager.id }} </button></td>
+      <td>
+        <button (click) = "deleteUsager(usager.id)" class = "btn btn-danger"> Supprimer {{ usager.id }} </button></td>
+
+    </tr>
+    </tbody>
+  </table>
+</div><br><br>
+<div *ngIf="submittedd=== true"><h1>On supprime l'usager qui a l'id:{{this.idx}}+{{this.usagerd?.usageru}}</h1></div><br><br>
+

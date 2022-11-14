@@ -1,0 +1,38 @@
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+h3 {
+   background: #00dd22;
+border-bottom: 5px solid green;
+}
+
+div {
+
+  border-bottom: double;
+}
+</style>
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center"> Sign in un citoyen plaignant</h3></div>
+  <form (ngSubmit) = "onSubmit()">
+
+    <h1>Veuillez entrer le code qui atteindra votre téléphone dans la minute!!</h1>
+        <div class="form-group">
+    <label> Telephone</label>
+    <input type="text" class ="form-control" id = "telephonec"
+           [(ngModel)] = "citoyen.telephonec" name = "telephonec" >
+  </div>
+<div class="form-group">
+  <label>SMS code</label>
+  <input type="text" class ="form-control" id = "smscode"
+         [(ngModel)] = "smscode" name = "smscode">
+</div>
+
+<button class = "btn btn-success" type ="submit">Sign in</button><br><br>
+<div>voici SMSCODE: {{this.sxx}}</div>
+<div *ngIf="submitted=== true"><h1> Bienvenue au citoyen dont le nom est {{this.citoyensg!.nomc}}</h1></div><br>
+
+<div *ngIf="submitted=== false && citoyensg!.telephonec "><h1> citoyen dont le nom est {{this.citoyensg!.nomc}} échouée: code SMS: {{this.smscode}}  </h1></div><br>
+
+
